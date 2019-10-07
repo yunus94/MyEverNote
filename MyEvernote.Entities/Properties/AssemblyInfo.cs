@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MyEvernote..Entities")]
+[assembly: AssemblyTitle("MyEvernote.Entities")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MyEvernote..Entities")]
+[assembly: AssemblyProduct("MyEvernote.Entities")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1b4765e5-b041-47a8-b6d0-367cde2cc6d3")]
+[assembly: Guid("25b8c141-09d5-4026-a3a8-d7d1ff5041b6")]
 
 // Version information for an assembly consists of the following four values:
 //
