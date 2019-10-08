@@ -24,6 +24,13 @@ namespace MyEvernote.Entities
         public virtual Category Category { get; set; }
         public virtual List<Liked> Likes { get; set; }//çoklu ilişki
 
+        //Proje ilk çalıştığında hata almamak için eklendi.
+        public Note()
+        {
+            Comments = new List<Comment>();
+            Likes = new List<Liked>(); 
+        }
+
 
     }
 }

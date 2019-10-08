@@ -16,7 +16,10 @@ namespace MyEvernote.Entities
         [StringLength(150)]
         public string Description { get; set; }
         public virtual List<Note> Notes { get; set; } //ilişkisel olduğu için virtual kullanıldı. Bir kategoride birden fazla not olabilir.(List)
-
+        public Category()
+        {
+            Notes = new List<Note>();
+        }
 
     }
 }
