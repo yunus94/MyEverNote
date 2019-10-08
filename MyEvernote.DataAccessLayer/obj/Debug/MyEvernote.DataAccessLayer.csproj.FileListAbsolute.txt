@@ -1,0 +1,16 @@
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.DataAccessLayer.dll.config
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.DataAccessLayer.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.DataAccessLayer.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\FakeData.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Entities.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\FakeData.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.csproj.CopyComplete
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.pdb

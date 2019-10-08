@@ -69,3 +69,15 @@ C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyEve
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyEvernote.WebApp.csproj.CopyComplete
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyEvernote.WebApp.dll
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyEvernote.WebApp.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.BusinessLayer.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Entities.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.BusinessLayer.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.BusinessLayer.dll.config
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Entities.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.xml
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.dll.config
