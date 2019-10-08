@@ -15,3 +15,5 @@ C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debu
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csproj.CopyComplete
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.dll
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.pdb
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\FakeData.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\FakeData.pdb

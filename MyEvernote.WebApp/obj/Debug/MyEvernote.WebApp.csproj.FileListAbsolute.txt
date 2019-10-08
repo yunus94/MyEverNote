@@ -81,3 +81,5 @@ C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFrame
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.SqlServer.xml
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.pdb
 C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.dll.config
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\FakeData.dll
+C:\Users\yunus\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\FakeData.pdb
