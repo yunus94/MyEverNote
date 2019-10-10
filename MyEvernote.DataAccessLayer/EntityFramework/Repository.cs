@@ -51,7 +51,7 @@ namespace MyEvernote.DataAccessLayer.EntityFramework
         }
         public int Save()
         {
-            return db.SaveChanges();
+            return context.SaveChanges();
         }
         public T Find(Expression<Func<T,bool>> where) //tek tip kayıt döner . Verilen koşula uygun veriyi döner.
         {

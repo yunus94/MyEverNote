@@ -1,4 +1,5 @@
-﻿
+﻿@using MyEvernote.Entities
+@model List<Note>
 @{
     ViewBag.Title = "Index";
 }
@@ -8,13 +9,7 @@
     <div class="row">
         <div class="col-md-3">
             @*Kategoriler*@
-            <p class="lead">Kategoriler</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-arrow-right"></span>Tümü</a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-arrow-right"></span>Category 1</a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-arrow-right"></span>Category 2</a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-arrow-right"></span>Category 3</a>
-            </div>
+            @Html.Partial("_PartialCategories")
         </div>
         <div class="col-md-9">
             <div class="row carousel-holder">
@@ -46,22 +41,35 @@
                     </div>
                 </div>
             </div>
-            <!--Yazılar-->
+            <!--Notlar-->
             <div class="row">
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right"></h4>
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-                            <p>sdgsdfh dgagasdfg asfafa asdasdgsdgs sg sdfsfssdfs sfsdfsdf dfsdfsda</p>
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span>yunusonal <br />
-                                <span class="glyphicon glyphicon-time"></span>07.10.2019 21:30
-                            </h6>
-                        </div>
+                @foreach (Note note in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="@note.Title">
+                            <div class="caption">
+                                <h4 class="pull-right"></h4>
+                                <h4>
+                                    <a href="#">@note.Title</a>
+                                </h4>
+                                <h6 class="text-right">
+                                    @note.Owner.Username<span class="glyphicon glyphicon-user"></span><br />
+                                    @note.ModifiedOn.ToString("dd.MM.yy HH:mm") <span class="glyphicon glyphicon-time"></span>
+                                </h6>
+
+                                @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 70)
+                                {
+                                    <p> @(note.Text.Substring(0, 70) + "...")</p>
+                                    <p class="pull-right"><a href="#" class="btn btn-default btn-sm">Devamı<span class="glyphicon glyphicon-chevron-right"></span></a></p>
+                                }
+                                else
+                                {
+                                    <p>@note.Text </p>
+                                }
+
+
+                            </div>
                         <div><hr /></div>
 
                         <div class="ratings">
@@ -72,165 +80,15 @@
                             </p>
                             <p>
                                 <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span>15
+                                    <span class="glyphicon glyphicon-star-empty"></span>@note.LikeCount
                                 </button>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right"></h4>
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-                            <p>sdgsdfh dgagasdfg asfafa asdasdgsdgs sg sdfsfsdfsdfsda</p>
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span>yunusonal <br />
-                                <span class="glyphicon glyphicon-time"></span>07.10.2019 21:30
-                            </h6>
-                        </div>
-                        <div><hr /></div>
 
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right"></h4>
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-                            <p>sdgsdfh dgagasdfg asfafa asdasdgsdgs sg sdfsfsdfsdfsda</p>
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span>yunusonal <br />
-                                <span class="glyphicon glyphicon-time"></span>07.10.2019 21:30
-                            </h6>
-                        </div>
-                        <div><hr /></div>
+            }
 
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right"></h4>
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-                            <p>sdgsdfh dgagasdfg asfafa asdasdgsdgs sg sdfsfsdfsdfsda</p>
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span>yunusonal <br />
-                                <span class="glyphicon glyphicon-time"></span>07.10.2019 21:30
-                            </h6>
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right"></h4>
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-                            <p>sdgsdfh dgagasdfg asfafa asdasdgsdgs sg sdfsfsdfsdfsda</p>
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span>yunusonal <br />
-                                <span class="glyphicon glyphicon-time"></span>07.10.2019 21:30
-                            </h6>
-                        </div>
-                        <div><hr /></div>
-
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right"></h4>
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-
-                            <p>sdgsdfh dgagasdfg asfafa asdasdgsdgs sg sdfsfsdfsdfsda</p>
-                            <h6 class="text-right">
-                                <span class="glyphicon glyphicon-user"></span>yunusonal <br />
-                                <span class="glyphicon glyphicon-time"></span>07.10.2019 21:30
-                            </h6>
-                        </div>
-                        <div><hr /></div>
-
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

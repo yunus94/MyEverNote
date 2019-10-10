@@ -23,10 +23,10 @@ namespace MyEvernote.DataAccessLayer.MySql
         public int Insert(T obj)
         {
             throw new NotImplementedException();
-            MySqlConnection conn;
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("Inert into...");
-            cmd.Execute();
+            //MySqlConnection conn;
+            //conn.Open();
+            //MySqlCommand cmd = new MySqlCommand("Inert into...");
+            //cmd.Execute();
         }
 
         public List<T> List()
