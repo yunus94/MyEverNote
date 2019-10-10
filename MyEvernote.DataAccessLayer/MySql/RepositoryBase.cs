@@ -1,16 +1,14 @@
-﻿using MyEvernote.DataAccessLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyEvernote.BusinessLayer
+namespace MyEvernote.DataAccessLayer.MySql
 {
-    //singleton pattern 
-   public class RepositoryBase
+    public class RepositoryBase
     {
-        protected static DatabaseContext db;
+        protected static object /*MySqlContext*/ context;
         private static object _lockSync = new object();
         protected RepositoryBase()
         {
@@ -18,18 +16,17 @@ namespace MyEvernote.BusinessLayer
         }
         private static void CreateContext()
         {
-            if (db==null)
+            if (context == null)
             {
                 lock (_lockSync)
                 {
-                    if (db==null)
+                    if (context == null)
                     {
-                        db = new DatabaseContext();
+                        context = new  object /*MySqlContext*/();
 
                     }
                 }
             }
         }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MyEvernote.DataAccessLayer;
+using MyEvernote.DataAccessLayer.Abstract;
 using MyEvernote.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,15 +9,15 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyEvernote.BusinessLayer
+namespace MyEvernote.DataAccessLayer.EntityFramework
 {
-   public class Repository<T> :RepositoryBase where T:class //farklı türden verileri önlemek için Ör:int
+   public class Repository<T> :RepositoryBase, IRepository<T> where T:class //farklı türden verileri önlemek için Ör:int
     {
         private DbSet<T> _objectSet;
 
         public Repository() //performans açısından dbset i bu class da yaratıp , aşağıdaki classlarda kullandım.
         {
-            _objectSet = db.Set<T>();  // db set: o an hangi class çağrılıyorsa o class ı alır. Ör Category,Note...
+            _objectSet = context.Set<T>();  // db set: o an hangi class çağrılıyorsa o class ı alır. Ör Category,Note...
         }
         public List<T> List()
         {
@@ -48,7 +49,7 @@ namespace MyEvernote.BusinessLayer
           _objectSet.Remove(obj);
             return Save();
         }
-        private int Save()
+        public int Save()
         {
             return db.SaveChanges();
         }
