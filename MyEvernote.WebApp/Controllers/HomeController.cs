@@ -13,7 +13,9 @@ namespace MyEvernote.WebApp.Controllers
         {
             BusinessLayer.Test test = new BusinessLayer.Test();
             //test.InsertTest();
-            test.UpdateTest();
+            //test.UpdateTest();
+            //test.DeleteTest();
+            test.CommentTest();
             return View();
         }
     }

@@ -11,13 +11,16 @@ namespace MyEvernote.BusinessLayer
     {
         private Repository<EvernoteUser> repo_user = new Repository<EvernoteUser>();
         private Repository<Category> repo_category = new Repository<Category>();
+        private Repository<Comment> repo_comment = new Repository<Comment>();
+        private Repository<Note> repo_note = new Repository<Note>();
+
         public Test()
        {
             //DataAccessLayer.DatabaseContext db = new DataAccessLayer.DatabaseContext();
             //db.Categories.ToList();
 
-            
-            List<Category> categories= repo_category.List();
+            List<Category> categories = repo_category.List();
+            //List<Category> categories_filtered= repo_category.List(x=>x.Id>5);
         }
         public void InsertTest()
         {
@@ -42,8 +45,32 @@ namespace MyEvernote.BusinessLayer
             if (user!=null)
             {
                 user.Username = "xxx";
-               int result= repo_user.Save();
+               int result= repo_user.Update(user);
             }
+        }
+        public void DeleteTest()
+        {
+            EvernoteUser user=repo_user.Find(x => x.Username == "xxx");
+            if (user!=null)
+            {
+               int result= repo_user.Delete(user);
+            }
+        }
+        public void CommentTest()
+        {
+            EvernoteUser user = repo_user.Find(x => x.Id == 1);
+            Note note = repo_note.Find(x => x.Id == 3);
+
+            Comment comment = new Comment()
+            {
+                Text = "Bu bir test denemesi",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                ModifiedUsername = "yyunus",
+                Note = null,
+                Owner = null
+            };
+            repo_comment.Insert(comment);
         }
 
     }

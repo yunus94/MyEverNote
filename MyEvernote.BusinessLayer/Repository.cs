@@ -10,9 +10,8 @@ using System.Threading.Tasks;
 
 namespace MyEvernote.BusinessLayer
 {
-   public class Repository<T> where T:class //farklı türden verileri önlemek için Ör:int
+   public class Repository<T> :RepositoryBase where T:class //farklı türden verileri önlemek için Ör:int
     {
-        private DatabaseContext db = new DatabaseContext();
         private DbSet<T> _objectSet;
 
         public Repository() //performans açısından dbset i bu class da yaratıp , aşağıdaki classlarda kullandım.
@@ -49,7 +48,7 @@ namespace MyEvernote.BusinessLayer
           _objectSet.Remove(obj);
             return Save();
         }
-        public int Save()
+        private int Save()
         {
             return db.SaveChanges();
         }

@@ -68,6 +68,7 @@ namespace MyEvernote.DataAccessLayer
 
             //user list for using
             List<EvernoteUser> userList = context.EvernoteUsers.ToList();//her seferinden sql den select çekmemesi için eklendi.
+
             //adding fake categories
             for (int i = 0; i < 10; i++)
             {
@@ -98,6 +99,7 @@ namespace MyEvernote.DataAccessLayer
                         ModifiedUsername = owner.Username
                     };
                     category.Notes.Add(note);
+
                     //adding fake commets
                     for (int j = 0; j < FakeData.NumberData.GetNumber(3,5); j++)
                     {
