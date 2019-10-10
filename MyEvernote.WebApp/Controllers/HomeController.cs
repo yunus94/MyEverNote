@@ -43,6 +43,11 @@ namespace MyEvernote.WebApp.Controllers
             
             return View("Index", cat.Notes.OrderByDescending(x=>x.ModifiedOn).ToList());
         }
+        public ActionResult MostLiked()
+        {
+            NoteManager nm = new NoteManager();
+            return View("Index",nm.GetAllNote().OrderByDescending(x => x.LikeCount).ToList());//Not sıralaması bittiğinde Index sayfasını döndürdüğünden her bir işlem için action oluşturmamıza gerek kalmıyor.
+        }
          
     }
 }
