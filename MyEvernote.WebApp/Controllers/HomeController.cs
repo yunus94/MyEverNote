@@ -20,7 +20,10 @@ namespace MyEvernote.WebApp.Controllers
             //    return View(TempData["mm"] as List<Note>);
             //}
             NoteManager nm = new NoteManager();
-            return View(nm.GetAllNote());
+            return View(nm.GetAllNote().OrderByDescending(x => x.ModifiedOn).ToList());
+
+            //Veritabanı ile yapılan işlerde kullanılabilir.
+            //return View(nm.GetAllNoteQueryable().OrderByDescending(x => x.ModifiedOn).ToList()); 
         }
         public ActionResult ByCategory(int? id)
         {
@@ -38,7 +41,8 @@ namespace MyEvernote.WebApp.Controllers
                 //return RedirectToAction("Index", "Home");
             }
             
-            return View("Index", cat.Notes);
+            return View("Index", cat.Notes.OrderByDescending(x=>x.ModifiedOn).ToList());
         }
+         
     }
 }

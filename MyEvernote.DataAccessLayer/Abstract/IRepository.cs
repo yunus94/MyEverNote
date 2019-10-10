@@ -10,7 +10,7 @@ namespace MyEvernote.DataAccessLayer.Abstract
    public interface IRepository<T>
     {
          List<T> List();
-
+        IQueryable<T> ListQueryable();
          List<T> List(Expression<Func<T, bool>> where);//istenilen bir kritere göre listeleme yapılıyor.
 
          int Insert(T obj);

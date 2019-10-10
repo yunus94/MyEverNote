@@ -15,5 +15,10 @@ namespace MyEvernote.BusinessLayer
         {
             return repo_note.List();
         }
+        //veri tabanı işlemleri için kullanılabilir.
+        public IQueryable<Note> GetAllNoteQueryable()
+        {
+            return repo_note.ListQueryable();
+        }
     }
 }
