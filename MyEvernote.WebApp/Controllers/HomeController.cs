@@ -48,6 +48,10 @@ namespace MyEvernote.WebApp.Controllers
             NoteManager nm = new NoteManager();
             return View("Index",nm.GetAllNote().OrderByDescending(x => x.LikeCount).ToList());//Not sıralaması bittiğinde Index sayfasını döndürdüğünden her bir işlem için action oluşturmamıza gerek kalmıyor.
         }
+        public ActionResult About()
+        {
+            return View();
+        }
          
     }
 }
