@@ -72,7 +72,28 @@ namespace MyEvernote.WebApp.Controllers
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                if (model.Username=="yunus")
+                {
+                    ModelState.AddModelError("", "Kullanıcı adı kullanılıyor");
+                }
+
+                if (model.Email == "yunus@gmail.com")
+                {
+                    ModelState.AddModelError("", "Kullanıcı e-postası kullanılıyor");
+                }
+                foreach (var item in ModelState)
+                {
+                    if (item.Value.Errors.Count>0)
+                    {
+                        return View(model);
+                    }
+                }
+              
+                return RedirectToAction("RegisterOk");
+            }
+            return View(model);
         }
 
         public ActionResult UserActivate(Guid activate_id)
