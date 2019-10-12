@@ -1,4 +1,4 @@
-﻿@using MyEvernote.WebApp.ViewModels
+﻿@using MyEvernote.Entities.ValueObjects
   @model LoginViewModel
 @{
     ViewBag.Title = "MyEvernote - Giriş Sayfası";
@@ -16,13 +16,15 @@
             </div>
             <div class="main-content">
 
+                @Html.ValidationSummary(false) @*Her türlü hatayı göstermesi için false.*@
+
                 <div class="input-group ">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                     @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Kullanıcı adınız" })
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Şifreniz" , type="password" })
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Şifreniz", type = "password" })
                 </div>
 
                 <div class="form-group ">
