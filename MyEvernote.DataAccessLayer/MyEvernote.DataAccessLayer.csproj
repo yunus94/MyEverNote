@@ -67,6 +67,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyEvernote.Common\MyEvernote.Common.csproj">
+      <Project>{d1cf274b-0264-4239-9aa6-12a37752c1cc}</Project>
+      <Name>MyEvernote.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyEvernote.Entities\MyEvernote.Entities.csproj">
       <Project>{25b8c141-09d5-4026-a3a8-d7d1ff5041b6}</Project>
       <Name>MyEvernote.Entities</Name>

@@ -143,7 +143,8 @@ namespace MyEvernote.WebApp.Controllers
 
         public ActionResult Logout()
         {
-            return View();
+            Session.Clear();
+            return RedirectToAction("Index");
         }
     }
 }

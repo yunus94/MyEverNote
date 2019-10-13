@@ -1,4 +1,5 @@
-﻿using MyEvernote.DataAccessLayer;
+﻿using MyEvernote.Common;
+using MyEvernote.DataAccessLayer;
 using MyEvernote.DataAccessLayer.Abstract;
 using MyEvernote.Entities;
 using System;
@@ -48,7 +49,7 @@ namespace MyEvernote.DataAccessLayer.EntityFramework
                 DateTime now = DateTime.Now;
                 o.CreatedOn = now;
                 o.ModifiedOn = now;
-                o.ModifiedUsername = "system";
+                o.ModifiedUsername = App.Common.GetCurrentUsername();
             }
             return Save();
         }
@@ -58,7 +59,7 @@ namespace MyEvernote.DataAccessLayer.EntityFramework
             {
                 MyEntityBase o = obj as MyEntityBase;
                 o.ModifiedOn =DateTime.Now;
-                o.ModifiedUsername = "system";
+                o.ModifiedUsername = App.Common.GetCurrentUsername();
             }
             return Save();
         }
@@ -68,7 +69,7 @@ namespace MyEvernote.DataAccessLayer.EntityFramework
             //{
             //    MyEntityBase o = obj as MyEntityBase;
             //    o.ModifiedOn = DateTime.Now;
-            //    o.ModifiedUsername = "system";
+            //    o.ModifiedUsername = App.Common.GetUsername();
             //}
             _objectSet.Remove(obj);
             return Save();
