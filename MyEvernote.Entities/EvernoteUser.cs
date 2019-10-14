@@ -21,6 +21,8 @@ namespace MyEvernote.Entities
         public string Email { get; set; }
         [Required, StringLength(25)]
         public string Password { get; set; }
+        [StringLength(30)]                   //images/user_12.jpg
+        public string  ProfileImageFilename { get; set; }
         public bool IsActive { get; set; }
         [Required]
         public Guid ActivateGuid { get; set; } //kullanıcının id sini karmaşıklaştırmak için kullanıldı(myevernote.com/user/activate/asda-adad)

@@ -54,6 +54,30 @@ namespace MyEvernote.WebApp.Controllers
         {
             return View();
         }
+        public ActionResult ShowProfile()
+        {
+            EvernoteUser currentuser = Session["login"] as EvernoteUser;
+            UserManager um = new UserManager();
+            BusinessLayerResult<EvernoteUser> res = um.GetUserById(currentuser.Id);
+            if (res.Errors.Count>0)
+            {
+
+            }
+            return View(res.Result);
+        }
+        public ActionResult EditProfile()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EditProfile(EvernoteUser user)
+        {
+            return View();
+        }
+        public ActionResult RemoveProfile()
+        {
+            return View();
+        }
         public ActionResult Login()
         {
             return View();
