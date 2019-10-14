@@ -99,33 +99,6 @@ namespace MyEvernote.WebApp.Controllers
                     res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
                     return View(model);
                 }
-                //EvernoteUser user = null;
-                //try
-                //{
-                //   user= um.RegisterUser(model);
-                //}
-                //catch (Exception ex)
-                //{
-                //    ModelState.AddModelError("", ex.Message);
-                //    throw;
-                //}
-                //if (model.Username == "yunus")
-                //{
-                //    ModelState.AddModelError("", "Kullanıcı adı kullanılıyor");
-                //}
-
-                //if (model.Email == "yunus@gmail.com")
-                //{
-                //    ModelState.AddModelError("", "Kullanıcı e-postası kullanılıyor");
-                //}
-                //foreach (var item in ModelState)
-                //{
-                //    if (item.Value.Errors.Count > 0)
-                //    {
-                //        return View(model);
-                //    }
-                //}
-
                 return RedirectToAction("RegisterOk");
             }
             return View(model);
@@ -136,11 +109,31 @@ namespace MyEvernote.WebApp.Controllers
             return View();
         }
 
-        public ActionResult UserActivate(Guid activate_id)
+        public ActionResult UserActivate(Guid id)
+        {
+            UserManager um = new UserManager();
+            BusinessLayerResult<EvernoteUser> res= um.ActivateUser(id);
+            if (res.Errors.Count>0)
+            {
+                TempData["errors"] = res.Errors;
+                return RedirectToAction("UserActivateCancel");
+            }
+            return RedirectToAction("UserActivateOk");
+        }
+
+        public ActionResult UserActivateOk()
         {
             return View();
         }
-
+        public ActionResult UserActivateCancel()
+        {
+            List<ErrorMessageObj> errors = null;
+            if (TempData["errors"] != null)
+            {
+                 errors = TempData["errors"] as List<ErrorMessageObj>;
+            } 
+            return View(errors);
+        }
         public ActionResult Logout()
         {
             Session.Clear();

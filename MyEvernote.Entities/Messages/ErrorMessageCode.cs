@@ -6,6 +6,8 @@
         EmailAlredyExists=102,
         UserIsNotActive=151,
         UsernameOrPassWrong=152,
-        CheckYourEmail=153
+        CheckYourEmail=153,
+        UserAlreadyActive=154,
+        ActivateIdDoesNotExists=155
     }
 }

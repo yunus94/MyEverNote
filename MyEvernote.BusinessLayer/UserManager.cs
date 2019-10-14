@@ -1,4 +1,5 @@
-﻿using MyEvernote.DataAccessLayer.EntityFramework;
+﻿using MyEvernote.Common.Helpers;
+using MyEvernote.DataAccessLayer.EntityFramework;
 using MyEvernote.Entities;
 using MyEvernote.Entities.Messages;
 using MyEvernote.Entities.ValueObjects;
@@ -43,8 +44,11 @@ namespace MyEvernote.BusinessLayer
                 if (dbResult > 0)
                 {
                     res.Result = repo_user.Find(x => x.Email == data.Email && x.Username == data.Username);
-
                     //layerResult.Result.ActivateGuid
+                    string siteUri = ConfigHelper.Get<string>("SiteRootUri");
+                    string activateUri = $"{siteUri}/Home/UserActivate/{res.Result.ActivateGuid}";
+                    string body= $"Merhaba {res.Result.Username};<br><br> Hesabınızı aktifleştirmek için <a href='{activateUri}' target='_blank'> tıklayınız</a>.";
+                    MailHelper.SendMail(body, res.Result.Email, "My Evernote Hesap Aktifleştirme");
                 }
             }
             return res;
@@ -65,6 +69,26 @@ namespace MyEvernote.BusinessLayer
             else
             {
                 res.AddError(ErrorMessageCode.UsernameOrPassWrong, "Kullanıcı adı veya şifre uyuşmuyor.");
+            }
+            return res;
+        }
+        public BusinessLayerResult<EvernoteUser> ActivateUser(Guid activateId)
+        {
+            BusinessLayerResult<EvernoteUser> res = new BusinessLayerResult<EvernoteUser>();
+            res.Result = repo_user.Find(x => x.ActivateGuid==activateId);
+            if (res.Result!=null)
+            {
+                if (res.Result.IsActive)
+                {
+                    res.AddError(ErrorMessageCode.UserAlreadyActive, "Kullanıcı zaten aktif edilmiştir.");
+                    return res;
+                }
+                res.Result.IsActive = true;
+                repo_user.Update(res.Result);
+            }
+            else
+            {
+                res.AddError(ErrorMessageCode.ActivateIdDoesNotExists, "Aktifleştirilecek kullanıcı bulunamadı.");
             }
             return res;
         }
