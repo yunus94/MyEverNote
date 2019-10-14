@@ -9,6 +9,9 @@
         CheckYourEmail=153,
         UserAlreadyActive=154,
         ActivateIdDoesNotExists=155,
-        UserNotFound=156
+        UserNotFound=156,
+        ProfileCouldNotUpdated=157,
+        UserCouldNotDelete = 158,
+        UserCouldNotFound = 159
     }
 }
