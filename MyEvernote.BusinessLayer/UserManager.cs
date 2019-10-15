@@ -123,11 +123,12 @@ namespace MyEvernote.BusinessLayer
                 return res;
             }
             res.Result =repo_user.Find(x => x.Id == data.Id);
-            res.Result.Email = data.Email;
             res.Result.Name = data.Name;
             res.Result.Surname = data.Surname;
-            res.Result.Password = data.Password;
             res.Result.Username = data.Username;
+            res.Result.Password = data.Password;
+            res.Result.Email = data.Email;
+
             if (string.IsNullOrEmpty(data.ProfileImageFilename) == false)
             {
                 res.Result.ProfileImageFilename = data.ProfileImageFilename;

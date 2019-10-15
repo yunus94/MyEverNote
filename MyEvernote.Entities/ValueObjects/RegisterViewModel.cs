@@ -14,7 +14,7 @@ namespace MyEvernote.Entities.ValueObjects
             StringLength(25 , ErrorMessage = "{0} alanı max. {1} karakter olmalı.")]
         public string Username { get; set; } 
 
-        [DisplayName("E-psta"), 
+        [DisplayName("E-posta"), 
             Required(ErrorMessage = "{0} alanı boş geçilemez."), 
             DataType(DataType.Password),
             StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalı."),
