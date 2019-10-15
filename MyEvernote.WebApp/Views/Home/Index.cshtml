@@ -70,26 +70,29 @@
 
 
                             </div>
-                        <div><hr /></div>
+                            <div><hr /></div>
 
-                        <div class="ratings">
-                            <p class="pull-right">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-comment"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class="btn btn-default btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty"></span>@note.LikeCount
-                                </button>
-                            </p>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <button class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-comment"></span>Yorumlar
+                                    </button>
+                                </p>
+                                <p>
+                                    <button class="btn btn-default btn-sm" type="button">
+                                        <span class="glyphicon glyphicon-star-empty"></span>@note.LikeCount
+                                    </button>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            }
+                }
 
             </div>
         </div>
     </div>
 </div>
+@section footer{
+    @Html.Partial("_PartialFooter")
+}
